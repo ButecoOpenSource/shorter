@@ -1,0 +1,216 @@
+@charset "utf-8";
+
+html {
+    background-color: #f6f9f9;
+    color: #95a4a9;
+    font: 12px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+    margin: 10%;
+}
+
+.logo {
+    float: left;
+    margin: 0 40px 20px 0;
+}
+
+.logo img {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 125px;
+}
+
+.content {
+    float: left;
+    width: 70%;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: normal;
+    line-height: 1;
+}
+
+p, .title {
+    margin-bottom: 20px;
+}
+
+p {
+    font-weight: bold;
+}
+
+a {
+    color: #339999;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    text-decoration: underline;
+}
+
+/*
+Animate.css - http://daneden.me/animate
+LICENSED UNDER THE  MIT LICENSE (MIT)
+
+Copyright (c) 2012 Dan Eden
+*/
+.animated {
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -ms-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+.animated.hinge {
+    -webkit-animation-duration: 2s;
+    -moz-animation-duration: 2s;
+    -ms-animation-duration: 2s;
+    -o-animation-duration: 2s;
+    animation-duration: 2s;
+}
+
+@-webkit-keyframes bounceInDown {
+    0% {
+        -webkit-transform: translateY(-2000px);
+    }
+    
+    60% {
+        -webkit-transform: translateY(30px);
+    }
+    
+    80% {
+        -webkit-transform: translateY(-10px);
+    }
+    
+    100% {
+        -webkit-transform: translateY(0);
+    }
+}
+
+@-moz-keyframes bounceInDown {
+    0% {
+        -moz-transform: translateY(-2000px);
+    }
+    
+    60% {
+        -moz-transform: translateY(30px);
+    }
+    
+    80% {
+        -moz-transform: translateY(-10px);
+    }
+    
+    100% {
+        -moz-transform: translateY(0);
+    }
+}
+
+@-o-keyframes bounceInDown {
+    0% {
+        -o-transform: translateY(-2000px);
+    }
+    
+    60% {
+        -o-transform: translateY(30px);
+    }
+    
+    80% {
+        -o-transform: translateY(-10px);
+    }
+    
+    100% {
+        -o-transform: translateY(0);
+    }
+}
+
+@keyframes bounceInDown {
+    0% {
+        transform: translateY(-2000px);
+    }
+    
+    60% {
+        transform: translateY(30px);
+    }
+    
+    80% {
+        transform: translateY(-10px);
+    }
+    
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.bounceInDown {
+    -webkit-animation-name: bounceInDown;
+    -moz-animation-name: bounceInDown;
+    -o-animation-name: bounceInDown;
+    animation-name: bounceInDown;
+}
+
+@media handheld, only screen and (max-width: 720px) {
+    .logo,
+    .content {
+        float: none;
+    }
+
+    .logo img {
+        max-width: 125px;
+        max-height: 125px;
+    }
+
+    .content {
+        width: 100%;
+    }
+}
+
+input[type="text"] {
+    border: 1px solid #DADADA;
+    color: #888;
+    height: 30px;
+    margin-right: 6px;
+    margin-top: 2px;
+    outline: 0px none;
+    padding: 3px 3px 3px 5px;
+    width: 70%;
+    font-size: 14px;
+    line-height: 16px;
+    box-shadow: 0px 1px 4px #ECECEC inset;
+}
+
+input[type="text"]:focus,
+input[type="text"]:active {
+    border-color: #66AFE9;
+}
+
+input[type="text"], button {
+    margin-bottom: 6px;
+}
+
+button {
+    background: #E27575 none repeat scroll 0% 0%;
+    border: medium none;
+    padding: 10px 25px;
+    color: #FFF;
+    box-shadow: 1px 1px 5px #B6B6B6;
+    border-radius: 3px;
+    text-shadow: 1px 1px 1px #9E3F3F;
+    cursor: pointer;
+    width: 120px;
+}
+
+input.error {
+    border-color: #E83535 !important;
+}
+
+label.error {
+    color: #E83535;
+}
