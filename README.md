@@ -10,11 +10,19 @@ An useless Bitly wrapper
 
 ## Running
 
-Set `BITLY_TOKEN` and `BITLY_SHORTER_DOMAIN` environment variables.
+Set `BITLY_TOKEN` and `BITLY_SHORTER_DOMAIN` environment variables to access Bitly API.
+Set `REQUIRE_AUTH`, `AUTH_USER`, `AUTH_PWD` to require Basic Auth.
+Set `STATIC_FOLDER` to point static pages folder (`./static`).
 
 Run `python server.py`.
 
 Access [localhost:8888](http://localhost:8888).
+
+## Deploy
+
+This application can be deployed at [OpenShift](https://www.openshift.com/).
+
+Remember to edit `wsgi.py` file.
 
 ## Purpose
 

@@ -6,6 +6,7 @@ import os
 
 from tornado.concurrent import Future
 
+REQUIRE_AUTH = os.getenv('REQUIRE_AUTH', False)
 USER = os.getenv('AUTH_USER', '')
 PWD = os.getenv('AUTH_PWD', '')
 
@@ -19,6 +20,9 @@ def require_basic_auth(validate_func=lambda *args, **kwargs: True, realm='Restri
                     handler._transforms = []
                     handler.finish()
                     return False
+
+                if not REQUIRE_AUTH:
+                    return True
 
                 auth_header = handler.request.headers.get('Authorization')
                 if auth_header is None or not auth_header.startswith('Basic '):
