@@ -1,2 +1,2 @@
-Tornado
-Unirest
+tornado==4.1
+requests==2.7.0
