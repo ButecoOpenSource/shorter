@@ -9,29 +9,18 @@
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
     </head>
-    <body class="animated bounceInDown">
-        <div>
+    <body>
+<!--         <div>
             <div class="logo">
                 <img src="img/bitly.png" alt="Bitly Logo">
             </div>
-        </div>
+        </div> -->
         <div class="content">
-            <div>
-                <h1 id="title" class="title">Shorter</h1>
-                <p>
-                    This is a custom bitlink generator for <a href="https://bitly.com" target="_blank">Bitly</a>.
-                </p>
-            </div>
-            <div>
-                <input type="text" id="longurl" placeholder="Long Url">
-                <button type="button" id="generate">Generate</button>
-            </div>
-            <div>
+            <h1 id="title" class="title">Shorter</h1>
+            <p><a href="http://support.bitly.com/knowledgebase/articles/76741-how-do-i-set-up-a-custom-short-domain-">Branded bitlink</a> generator for <a href="https://bitly.com" target="_blank">You Site</a>.</p>
+            <div class="form">
+                <input type="text" id="longurl" placeholder="Paste a link to shorten it"><button type="button" id="generate">Shorten</button>
                 <label id="error" class="error"></label>
-            </div>
-            <div>
-                <input type="text" id="shorturl" placeholder="Shorter Url" readonly="readonly">
-                <button type="button" id="copy">Copy</button>
             </div>
         </div>
     </body>
