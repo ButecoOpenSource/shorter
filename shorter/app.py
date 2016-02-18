@@ -8,7 +8,7 @@ import yaml
 
 from tornado.options import define, options
 
-import handlers
+from . import handlers
 
 
 define("config", default="shorter.yml", help="Configuration File")

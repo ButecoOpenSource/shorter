@@ -8,7 +8,7 @@ Branded bitlink generator for Bitly
 
 Check `sample_config.yml` for configuration details.
 
-Run `python app.py`.
+Run `python -m shorter.app --config=my_config.yml`.
 
 ## Bitly token and branded domain
 
