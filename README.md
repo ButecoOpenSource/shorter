@@ -1,8 +1,12 @@
 # Shorter
 
-Branded bitlink generator for Bitly
+Branded bitlink generator for Bitly.
 
 ![Screenshot](./screenshot.png)
+
+## About
+
+Easy way to create branded bitlinks with custom domain.
 
 ## Running
 
