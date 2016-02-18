@@ -2,11 +2,17 @@
 
 import requests
 
-from settings import BITLY_SHORTER_URL
+BITLY_API_URL = 'https://api-ssl.bitly.com'
+BITLY_SHORTER_URL = BITLY_API_URL + '/v3/shorten'
+BITLY_CLICKS_URL = BITLY_API_URL + '/v3/link/clicks'
 
 
 class BitlyException(Exception):
-    pass
+
+    def __init__(self, payload):
+        super(BitlyException, self).__init__('Can\'t generate short link.')
+        self.payload = payload
+
 
 class Bitly(object):
 
@@ -30,5 +36,20 @@ class Bitly(object):
 
         if response.status_code == 200 and response.json().get('status_code') == 200:
             return response.json().get('data', {}).get('url', url)
+        else:
+            raise BitlyException(response.json())
+
+    def clicks(self, url):
+        if not url:
+            raise ValueError('url is empty.')
+
+        response = requests.get(BITLY_CLICKS_URL, params={
+            'access_token': self.token,
+            'link': url,
+            'format': 'json'
+        })
+
+        if response.status_code == 200 and response.json().get('status_code') == 200:
+            return response.json().get('data', {}).get('link_clicks', 0)
         else:
             raise BitlyException(response.json())

@@ -1,0 +1,158 @@
+@charset "utf-8";
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+html {
+    background-color: #EFF7FC;
+    color: #95a4a9;
+}
+
+body * {
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+input[type="text"], .btn-short {
+    margin: 0;
+    text-rendering: optimizelegibility;
+    position: relative;
+    outline: 0px none;
+    float: left;
+}
+
+input[type="text"] {
+    border: 1px solid #EE6123;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding: 3px 8px 3px 8px;
+    height: 60px;
+    width: ~'calc(100% - 128px)';
+    font-size: 1.2em;
+    line-height: 1.26em;
+    color: #292929;
+}
+
+input[type="text"]:focus,
+input[type="text"]:active {
+    border-color: #E45212;
+    background-color: #fef7f4;
+}
+
+.btn-short:focus,
+.btn-short:hover,
+.btn-copy:focus,
+.btn-copy:hover {
+    background-color: #E45212;
+}
+
+.btn-copy:focus,
+.btn-copy:hover {
+    color: #FFF;
+}
+
+.btn-short {
+    top: 1px;
+    width: 108px;
+    height: 66px;
+    font-size: 1em;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background-color: #EE6123;
+    color: #FFF;
+    border: 0 !important;
+    box-shadow: 0 0 0 1px #EE6123;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.btn-copy {
+    border-radius: 3px;
+    background-color: #FFF;
+    color: #EE6123;
+    border: 0 !important;
+    box-shadow: 0 0 0 1px #EE6123;
+    cursor: pointer;
+    margin-left: 6px;
+}
+
+.notification {
+    text-align: center;
+    background-color: #d9534f;
+    color: #FFF;
+    width: 100%;
+    display: inline-block;
+}
+
+.container {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#click-count {
+    color: #292929;
+    float: right;
+    padding-right: 6px;
+    font-size: 0.85em;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 25px;
+
+    h1 {
+        font-size: 3em;
+        margin-bottom: 10px;
+    }
+
+    a {
+        color: #339999;
+        text-decoration: none;
+    }
+
+    a:hover, a:focus {
+        text-decoration: underline;
+    }
+}
+
+.form, .result-data {
+    width: 100%;
+    padding: 2px 0 2px 0;
+    display: inline-block;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.copied {
+    font-size: 0.65em;
+    color: #EE6123;
+    padding-left: 4px;
+    display: none;
+}
+
+.result-data {
+    background-color: #FFF;
+    border-radius: 3px;
+
+    p {
+        padding: 0 6px 0 6px;
+
+        a {
+            text-decoration: none;
+            color: #95a4a9;
+        }
+
+        a:hover, a:focus {
+            text-decoration: underline;
+        }
+
+        .short {
+            color: #EE6123;
+        }
+    }
+}
