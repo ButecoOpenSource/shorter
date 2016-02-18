@@ -2,6 +2,8 @@
 
 Branded bitlink generator for Bitly
 
+![Screenshot](./screenshot.png)
+
 ## Running
 
 Check `sample_config.yml` for configuration details.
