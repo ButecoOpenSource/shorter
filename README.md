@@ -1,34 +1,14 @@
 # Shorter
 
-An useless Bitly wrapper
-
-## Requirements
-
-- Python 2.7+
-- Tornado 4.1
-- Unirest
+Branded bitlink generator for Bitly
 
 ## Running
 
-Set `BITLY_TOKEN` and `BITLY_SHORTER_DOMAIN` environment variables to access Bitly API.
-Set `REQUIRE_AUTH`, `AUTH_USER`, `AUTH_PWD` to require Basic Auth.
-Set `STATIC_FOLDER` to point static pages folder (`./static`).
+Check `sample_config.yml` for configuration details.
 
-Run `python server.py`.
+Run `python app.py`.
 
-Access [localhost:8888](http://localhost:8888).
-
-## Deploy
-
-This application can be deployed at [OpenShift](https://www.openshift.com/).
-
-Remember to edit `wsgi.py` file.
-
-## Purpose
-
-The main purpose of this project was to work with Tornado and Bitly API.
-
-## Bitly
+## Bitly token and branded domain
 
 To get an access token visit [this page](https://bitly.com/a/oauth_apps).
 

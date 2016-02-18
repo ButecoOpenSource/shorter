@@ -1,0 +1,10 @@
+# Tornado Configuration
+# You can use almost all configs from: http://www.tornadoweb.org/en/stable/web.html#application-configuration
+debug: true
+# Shorter Configuration
+server:
+  port: 5000
+  address: '127.0.0.1'
+bitly:
+  branded_domain: 'branded.domain'
+  access_token: '<bitly oauth token>'
