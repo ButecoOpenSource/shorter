@@ -1,3 +1,4 @@
+{% autoescape %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -16,12 +17,14 @@
         </div>
 
         <div class="container">
+            {{ xsrf_form_html() }}
             <div class="page-header">
                 <h1>Shorter</h1>
                 <p>Branded bitlink generator for <a href="//{{ handler.settings['bitly']['branded_domain'] }}" target="_blank">{{ handler.settings['bitly']['branded_domain'] }}</a>.</p>
             </div>
             <div class="form">
-                <input type="text" id="longurl" placeholder="Paste a link to shorten it"><button type="button" id="generate" class="btn-short">Shorten</button>
+                <input type="text" id="longurl" placeholder="Paste a link to shorten it">
+                <button type="button" id="generate" class="btn-short">Shorten</button>
             </div>
             <div class="result-data hide">
                 <p><a href="#" target="_blank" id="orignalurl"></a></p>
@@ -39,41 +42,5 @@
     </body>
     <script type="text/javascript" src="{{ static_url('js/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ static_url('js/clipboard.min.js') }}"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            new Clipboard('#copy');
-
-            $('#generate').click(function () {
-                $('.notification').addClass('hide');
-
-                var url = $('#longurl').val();
-
-                $.get('/short?url=' + url, function (data) {
-                    $('#orignalurl').attr('href', url).text(url);
-                    $('#shorturl').attr('href', data).text(data);
-                    $('#copy').attr('data-clipboard-text', data);
-                    $('.result-data').removeClass('hide');
-
-                    $.get('/clicks?url=' + data, function (data) {
-                        $('#click-count').attr('title', data + ' clicks').find('span').text(data);
-                    });
-                })
-                .fail(function () {
-                    $('.notification').removeClass('hide');
-
-                    setTimeout(function () {
-                        $('.notification').addClass('hide');
-                    }, 10 * 1000);
-                });
-            });
-
-            $('#copy').click(function () {
-                $(".copied").fadeIn(700, function(){
-                    window.setTimeout(function(){
-                        $('.copied').fadeOut();
-                    }, 2 * 1000);
-                });
-            });
-        });
-    </script>
+    <script type="text/javascript" src="{{ static_url('js/shorter.js') }}"></script>
 </html>

@@ -12,7 +12,7 @@ class ShortHandler(tornado.web.RequestHandler):
     def set_default_headers(self):
         self.set_header('Content-Type', 'application/json')
 
-    def get(self):
+    def post(self):
         settings = self.application.settings.get('bitly', {})
         token = settings.get('access_token', '')
         domain = settings.get('branded_domain', None)
@@ -47,7 +47,7 @@ class ClicksHandler(tornado.web.RequestHandler):
     def set_default_headers(self):
         self.set_header('Content-Type', 'application/json')
 
-    def get(self):
+    def post(self):
         settings = self.application.settings.get('bitly', {})
         token = settings.get('access_token', '')
         domain = settings.get('branded_domain', None)

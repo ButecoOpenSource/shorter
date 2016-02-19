@@ -1,6 +1,9 @@
 # Tornado Configuration
 # You can use almost all configs from: http://www.tornadoweb.org/en/stable/web.html#application-configuration
 debug: true
+autoreload: true
+compress_response: true
+xsrf_cookies: true # this required
 # Shorter Configuration
 server:
   port: 5000
