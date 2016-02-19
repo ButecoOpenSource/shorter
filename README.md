@@ -1,4 +1,4 @@
-# Shorter
+# Shorter [![PyPI](https://img.shields.io/pypi/v/BitlyShorter.svg?style=flat-square)](https://pypi.python.org/pypi/BitlyShorter) [![Build Status](https://travis-ci.org/alexandrevicenzi/shorter.svg?branch=master)](https://travis-ci.org/alexandrevicenzi/shorter)
 
 Branded bitlink generator for Bitly.
 
@@ -9,6 +9,8 @@ Branded bitlink generator for Bitly.
 Easy way to create branded bitlinks with custom domain.
 
 ## Install
+
+It works with Python 2.7+, 3.4+  and PyPy.
 
 `pip install BitlyShorter`
 
