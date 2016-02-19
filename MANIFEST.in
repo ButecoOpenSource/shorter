@@ -1,8 +1,10 @@
-# Include the license file
 include LICENSE
-include README.md
+include MANIFEST.in
 include sample_config.yml
 
-# Include the data files
-recursive-include shorter/static *
-recursive-include shorter/templates *
+graft shorter/static
+graft shorter/templates
+graft shorter/tests
+
+global-exclude __pycache__
+global-exclude *.py[co]
