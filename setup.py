@@ -14,6 +14,7 @@ setup(
     maintainer='Alexandre Vicenzi',
     maintainer_email='vicenzi.alexandre@gmail.com',
     packages=['shorter'],
+    install_requires=['PyYAML==3.11', 'requests==2.9.1', 'tornado==4.3'],
     url='https://github.com/alexandrevicenzi/shorter',
     bugtrack_url='https://github.com/alexandrevicenzi/shorter/issues',
     license='MIT',
