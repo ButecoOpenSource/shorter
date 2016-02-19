@@ -16,14 +16,24 @@ define("config", default="shorter.yml", help="Configuration File")
 
 class ShorterApp(tornado.web.Application):
 
-    def __init__(self, config_file):
+    def __init__(self, **settings):
         url_patterns = [
             (r'/', handlers.IndexHandler),
             (r'/short', handlers.ShortHandler),
             (r'/clicks', handlers.ClicksHandler),
         ]
-        settings = self.make_settings(config_file)
-        super(ShorterApp, self).__init__(url_patterns, **settings)
+
+        app_settings = {
+            'template_path': os.path.join(os.path.dirname(__file__), 'templates'),
+            'static_path': os.path.join(os.path.dirname(__file__), 'static'),
+            'static_url_prefix': '/static/',
+            'debug': False,
+            'autoreload': False
+        }
+
+        app_settings.update(settings)
+
+        super(ShorterApp, self).__init__(url_patterns, **app_settings)
 
     def listen(self):
         port = self.settings.get('server', {}).get('port', 8888)
@@ -39,24 +49,17 @@ class ShorterApp(tornado.web.Application):
 
         return server
 
-    def make_settings(self, config_file):
-        print('Loading config: %s' % config_file)
 
-        settings = {
-            'template_path': os.path.join(os.path.dirname(__file__), 'templates'),
-            'static_path': os.path.join(os.path.dirname(__file__), 'static'),
-            'static_url_prefix': '/static/',
-            'debug': False,
-            'autoreload': False
-        }
+def make_settings(config_file):
+    print('Loading config: %s' % config_file)
 
-        with open(config_file, 'r') as f:
-            settings.update(yaml.load(f))
+    with open(config_file, 'r') as f:
+        return yaml.load(f)
 
-        return settings
 
 if __name__ == '__main__':
     tornado.options.parse_command_line()
-    application = ShorterApp(options.config)
+    settings = make_settings(options.config)
+    application = ShorterApp(**settings)
     application.listen()
     tornado.ioloop.IOLoop.instance().start()

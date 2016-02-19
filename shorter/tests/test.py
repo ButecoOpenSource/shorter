@@ -34,7 +34,15 @@ bitly.Bitly = MockBitly
 class TestShorterApp(AsyncHTTPTestCase):
 
     def get_app(self):
-        return app.ShorterApp(os.path.join(os.path.dirname(__file__), 'test.yml'))
+        settings = {
+            'xsrf_cookies': False,
+            'bitly': {
+                'branded_domain': 'domain.me',
+                'access_token': 'TOKEN',
+            },
+        }
+
+        return app.ShorterApp(**settings)
 
     def test_index(self):
         response = self.fetch('/')
