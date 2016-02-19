@@ -1,1 +1,1 @@
-web: python -c "import yaml;print(yaml.dump(dict(xsrf_cookies=True, server=dict(port=$PORT, address='0.0.0.0'), bitly=dict(branded_domain=$BRANDED_DOMAIN, access_token=$ACCESS_TOKEN)), default_flow_style=False))">config.yml && python -m shorter.app --config=config.yml
+web: python -c "import yaml;print(yaml.dump(dict(xsrf_cookies=True, server=dict(port=$PORT, address='0.0.0.0'), bitly=dict(branded_domain='$BRANDED_DOMAIN', access_token='$ACCESS_TOKEN')), default_flow_style=False))">config.yml && python -m shorter.app --config=config.yml
