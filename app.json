@@ -5,7 +5,7 @@
     "productivity",
     "Bitly",
     "bitlink",
-    "short url",
+    "short url"
   ],
   "repository": "https://github.com/alexandrevicenzi/shorter",
   "logo": "https://github.com/alexandrevicenzi/shorter/raw/master/screenshot.png",
@@ -19,5 +19,5 @@
       "value": ""
     }
   },
-  "image": "heroku/python",
+  "image": "heroku/python"
 }
