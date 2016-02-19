@@ -8,6 +8,8 @@ Branded bitlink generator for Bitly.
 
 Easy way to create branded bitlinks with custom domain.
 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/alexandrevicenzi/shorter)
+
 ## Install
 
 It works with Python 2.7+, 3.4+  and PyPy.
