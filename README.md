@@ -8,6 +8,10 @@ Branded bitlink generator for Bitly.
 
 Easy way to create branded bitlinks with custom domain.
 
+## Install
+
+`pip install BitlyShorter`
+
 ## Running
 
 Check `sample_config.yml` for configuration details.
