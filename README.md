@@ -1,4 +1,4 @@
-# Shorter [![PyPI](https://img.shields.io/pypi/v/BitlyShorter.svg?style=flat-square)](https://pypi.python.org/pypi/BitlyShorter) [![Build Status](https://travis-ci.org/alexandrevicenzi/shorter.svg?branch=master)](https://travis-ci.org/alexandrevicenzi/shorter)
+# Shorter [![PyPI](https://img.shields.io/pypi/v/BitlyShorter.svg)](https://pypi.python.org/pypi/BitlyShorter) [![Build Status](https://travis-ci.org/alexandrevicenzi/shorter.svg?branch=master)](https://travis-ci.org/alexandrevicenzi/shorter)
 
 Branded bitlink generator for Bitly.
 
