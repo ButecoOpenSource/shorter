@@ -15,7 +15,7 @@
       "value": ""
     },
     "ACCESS_TOKEN": {
-      "description": "Bitly access token.",
+      "description": "Bitly access token",
       "value": ""
     }
   },
