@@ -4,9 +4,13 @@
     <head>
         <meta charset="utf-8">
         <title>Shorter - {{ handler.settings['bitly']['branded_domain'] }}</title>
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet/less" type="text/css" href="{{ static_url('stylesheet/style.less') }}">
-        <script src="{{ static_url('js/less.min.js') }}"></script>
+
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="{{ static_url('stylesheet/style.css') }}">
+
         <!--[if lt IE 9]>
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
@@ -32,15 +36,17 @@
                     <a href="#" target="_blank" class="short" id="shorturl"></a>
                     <button type="button" class="btn-copy" id="copy">Copy</button>
                     <span class="copied">Copied</span>
-                    <span id="click-count" title="0 clicks">
-                        <span>0</span>
-                        <img src="{{ static_url('img/statistics.png') }}" width="12px" height="12px" alt="Statistics">
-                    </span>
                 </p>
             </div>
         </div>
     </body>
-    <script type="text/javascript" src="{{ static_url('js/jquery.min.js') }}"></script>
-    <script type="text/javascript" src="{{ static_url('js/clipboard.min.js') }}"></script>
+
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+
     <script type="text/javascript" src="{{ static_url('js/shorter.js') }}"></script>
 </html>

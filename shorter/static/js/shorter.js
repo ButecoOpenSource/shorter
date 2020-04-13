@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    new Clipboard('#copy');
+    var clipboard = new ClipboardJS('#copy');
 
     $.ajaxSetup({
         beforeSend: function (xhr) {
@@ -17,10 +17,6 @@ $(document).ready(function () {
             $('#shorturl').attr('href', shortUrl).text(shortUrl);
             $('#copy').attr('data-clipboard-text', shortUrl);
             $('.result-data').removeClass('hide');
-
-            $.post('/clicks', { url: shortUrl }, function (clickCount) {
-                $('#click-count').attr('title', clickCount + ' clicks').find('span').text(clickCount);
-            });
         })
         .fail(function () {
             $('.notification').removeClass('hide');
@@ -31,11 +27,21 @@ $(document).ready(function () {
         });
     });
 
-    $('#copy').click(function () {
+    clipboard.on('success', function(e) {
         $(".copied").fadeIn(700, function(){
             window.setTimeout(function(){
                 $('.copied').fadeOut();
             }, 2 * 1000);
         });
+
+        e.clearSelection();
     });
+
+    // clipboard.click(function () {
+    //     $(".copied").fadeIn(700, function(){
+    //         window.setTimeout(function(){
+    //             $('.copied').fadeOut();
+    //         }, 2 * 1000);
+    //     });
+    // });
 });

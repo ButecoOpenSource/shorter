@@ -1,4 +1,4 @@
-# Shorter [![PyPI](https://img.shields.io/pypi/v/BitlyShorter.svg)](https://pypi.python.org/pypi/BitlyShorter) [![Build Status](https://travis-ci.org/alexandrevicenzi/shorter.svg?branch=master)](https://travis-ci.org/alexandrevicenzi/shorter)
+# Shorter
 
 Branded bitlink generator for Bitly.
 
@@ -8,13 +8,7 @@ Branded bitlink generator for Bitly.
 
 Easy way to create branded bitlinks with custom domain.
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/alexandrevicenzi/shorter)
-
-## Install
-
-It works with Python 2.7+, 3.4+  and PyPy.
-
-`pip install BitlyShorter`
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ButecoOpenSource/shorter)
 
 ## Running
 
@@ -27,3 +21,7 @@ Run `python -m shorter.app --config=my_config.yml`.
 To get an access token visit [this page](https://bitly.com/a/oauth_apps).
 
 To setup you own custom domain for Bitly, visit [this page](https://bitly.com/a/settings/advanced).
+
+## License
+
+MIT
