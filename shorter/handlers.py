@@ -41,3 +41,8 @@ class ShortHandler(tornado.web.RequestHandler):
 class IndexHandler(tornado.web.RequestHandler):
     def get(self):
         self.render("index.html")
+
+
+class StatusHandler(tornado.web.RequestHandler):
+    def get(self):
+        self.write("OK")

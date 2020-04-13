@@ -9,13 +9,14 @@ from tornado.options import define, options
 from . import handlers
 
 
-define("config", default="shorter.yml", help="Configuration File")
+define("config", default=None, help="Configuration File")
 
 
 class ShorterApp(tornado.web.Application):
     def __init__(self, **settings):
         url_patterns = [
             (r"/", handlers.IndexHandler),
+            (r"/status", handlers.StatusHandler),
             (r"/short", handlers.ShortHandler),
         ]
 
@@ -32,8 +33,10 @@ class ShorterApp(tornado.web.Application):
         super(ShorterApp, self).__init__(url_patterns, **app_settings)
 
     def listen(self):
-        port = self.settings.get("server", {}).get("port", 8888)
-        address = self.settings.get("server", {}).get("address", "127.0.0.1")
+        port = self.settings.get("server", {}).get("port", 8888) or 8888
+        address = (
+            self.settings.get("server", {}).get("address", "127.0.0.1") or "127.0.0.1"
+        )
         server = super(ShorterApp, self).listen(port, address)
 
         print("Listening on http://%s:%d" % (address, port))
@@ -47,6 +50,24 @@ class ShorterApp(tornado.web.Application):
 
 
 def make_settings(config_file):
+    if config_file is None:
+        print("Loading config from ENV")
+
+        return {
+            "debug": False,
+            "autoreload": False,
+            "compress_response": True,
+            "xsrf_cookies": True,
+            "server": {
+                "port": os.getenv("SERVER_PORT"),
+                "address": os.getenv("SERVER_ADDRESS"),
+            },
+            "bitly": {
+                "branded_domain": os.getenv("BITLY_DOMAIN"),
+                "access_token": os.getenv("BITLY_TOKEN"),
+            },
+        }
+
     print("Loading config: %s" % config_file)
 
     with open(config_file, "r") as f:
