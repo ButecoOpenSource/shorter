@@ -1,0 +1,23 @@
+{
+  "name": "Bitly Shorter",
+  "description": "Branded bitlink generator for Bitly.",
+  "keywords": [
+    "productivity",
+    "Bitly",
+    "bitlink",
+    "short url"
+  ],
+  "repository": "https://github.com/ButecoOpenSource/shorter",
+  "logo": "https://github.com/ButecoOpenSource/shorter/raw/master/screenshot.png",
+  "env": {
+    "BRANDED_DOMAIN": {
+      "description": "Custom domain",
+      "value": ""
+    },
+    "ACCESS_TOKEN": {
+      "description": "Bitly access token.",
+      "value": ""
+    }
+  },
+  "image": "heroku/python"
+}
